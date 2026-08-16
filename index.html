@@ -279,7 +279,6 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                display: none; /* shown when src set */
             }
 
             .project-screenshot .ph-label {
@@ -525,7 +524,7 @@
             <p class="tagline">
                 A current undergraduate from
                 <span>Northumbria University</span> with Unreal Engine, C++, gameplay systems and modding
-                experience with a diverse background in reverse software engineering, project management and game creation.
+                experience with a diverse background in software engineering, project management, game creation and software development.
                 <br />
                 <br />
                 Open to <span>games</span>, <span>software</span>, and <span>interactive media</span> roles across the <span>UK</span> and <span>Western Europe</span>.
@@ -577,68 +576,22 @@
                     <div class="project-main">
                         <h3>Factor-5</h3>
                         <p class="desc">
-                            A focused design exercise exploring core game mechanics and rapid
-                            prototyping. Built to demonstrate design thinking alongside
-                            technical implementation.
+                            A 2D arcade space shooter built in C++ inspired by Galaga.
+                            Features escalating enemy behaviour across difficulty tiers, a missile targeting system,
+                            power-ups, unique bullet patterns, and an event-driven architecture handling collision, targeting, and game state.
                         </p>
                         <div class="tags">
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">Prototype</span>
-                        </div>
-                    </div>
-
-                    <div class="project-screenshot">
-                        <!-- Replace with: <img src="screenshots/game-design.png" alt="Game Design Exercise screenshot"> -->
-                        <img src="" alt="">
-                        <div class="ph-label">
-                            <span>🖼</span>
-                            SCREENSHOT PLACEHOLDER
-                        </div>
-                    </div>
-
-                    <button class="expand-btn" onclick="toggleExpand(this)">
-                        <span class="arrow">▶</span> View More
-                    </button>
-
-                    <div class="project-expanded">
-                        <div class="project-expanded-inner">
-                            <p>
-                                Add your extended project description here — talk about the
-                                technical challenges you solved, what you learned, and any
-                                interesting implementation details that show your thinking.
-                            </p>
-                            <div class="video-wrap">
-                                <!-- Replace with: <video src="videos/game-design.mp4" controls></video> -->
-                                <div class="ph-label">
-                                    <span>▶</span>
-                                    GAMEPLAY VIDEO PLACEHOLDER
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FirstBlood -->
-                <div class="project-card fade-in">
-                    <div class="project-main">
-                        <h3>FirstBlood</h3>
-                        <p class="desc">
-                            Unreal Horror
-                        </p>
-                        <div class="tags">
+                            <span class="tag">Hornet</span>
                             <span class="tag">C++</span>
-                            <span class="tag">SDL / SFML</span>
                             <span class="tag">2D</span>
+                            <span class="tag">Prototype/Demo</span>
+                            <span class="tag">Project</span>
                         </div>
                     </div>
 
+                    <!--Screenshot-->
                     <div class="project-screenshot">
-                        <img src="" alt="">
-                        <div class="ph-label">
-                            <span>🖼</span>
-                            SCREENSHOT PLACEHOLDER
-                        </div>
+                        <img src="screenshots/F5SS.png" alt="Factor-5 Screenshot">
                     </div>
 
                     <button class="expand-btn" onclick="toggleExpand(this)">
@@ -648,120 +601,177 @@
                     <div class="project-expanded">
                         <div class="project-expanded-inner">
                             <p>
-                                Extended description for your 2D game. What was the scope?
-                                What systems did you build? What would you do differently?
-                                These details are what interviewers actually want to read.
+                                Enemy behaviour scales with level. They start stationary, then introducing lateral movement, increasing velocity, new bullet patterns,
+                                and eventually fully free-roaming patterns with randomised speed and locations.
+                                Each tier was tuned to feel like a genuine difficulty increase.
+                                <br />
+                                <br />
+                                Pointer usage was central to the targeting systems. Missiles track enemies by referencing object coordinates
+                                directly, keeping targeting responsive without unnecessary overhead. The biggest technical challenge was getting the
+                                missile system to fire cleanly under load without lag or sound spam/reapting rapidly,
+                                which required careful management of how events were queued and fired.
+                                <br />
+                                <br />
+                                Built against a deadline as a university assessment, demonstrating clean pointer usage,
+                                object-oriented design, and playable game feel within a constrained scope. It scored 92% and was praised for its polish and technical implementation.
                             </p>
+                            <!--Video-->
                             <div class="video-wrap">
-                                <div class="ph-label">
-                                    <span>▶</span>
-                                    GAMEPLAY VIDEO PLACEHOLDER
-                                </div>
+                                <video src="movies/F5M.mp4" controls></video>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Soul Chamber -->
-                <div class="project-card fade-in">
-                    <div class="project-main">
-                        <h3>Soul Chamber</h3>
-                        <p class="desc">
-                            Roblox.
+            <!-- FirstBlood -->
+            <div class="project-card fade-in">
+                <div class="project-main">
+                    <h3>First Blood</h3>
+                    <p class="desc">
+                        A 3D third-person horror mini game built in Unreal Engine 5,
+                        designed as a standalone experience within a shared multiplayer meta game.
+                        Collect data points against the clock while avoiding a proximity-triggered monster.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Unreal</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">3D</span>
+                        <span class="tag">Prototype/Demo</span>
+                        <span class="tag">Project</span>
+                    </div>
+                </div>
+
+                <div class="project-screenshot">
+                    <img src="screenshots/FBSS.png" alt="FirstBlood Screenshot">
+                </div>
+
+                <button class="expand-btn" onclick="toggleExpand(this)">
+                    <span class="arrow">▶</span> View More
+                </button>
+
+                <div class="project-expanded">
+                    <div class="project-expanded-inner">
+                        <p>
+                            First Blood is a 3D horror mini game within a meta game that seamlessly integrates with the larger experience it needed to be implemented in.
+                            The player must collect data points scattered across a dimly lit map whilst avoiding a proximity-triggered AI monster within the time limit.
+                            <br />
+                            <br />
+                            The boss AI uses a proximity trigger. It is dormant until the player enters its range, then actively chases and deals damage.
+                            HP and stamina are tracked as real values with on-screen bars, feeding into the tension of deciding when to run and when to push for another data point.
+                            <br />
+                            <br />
+                            Everything was built from the ground up to the map layout, AI behaviour, UI and game logic. Asset packs were used for models and textures however.
+                            A hidden secret mode rewards players who complete the run with a higher score, unlocking a red-tinted super success state for bonus points.
+                            <br />
+                            <br />
+                            The primary focus was on atmosphere, AI responsiveness, and making the time pressure feel genuinely stressful rather than arbitrary.
                         </p>
-                        <div class="tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">SDL / SFML</span>
-                            <span class="tag">2D</span>
+                        <div class="video-wrap">
+                            <video src="movies/FBM.mp4" controls></video>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="project-screenshot">
-                        <img src="" alt="">
-                        <div class="ph-label">
-                            <span>🖼</span>
-                            SCREENSHOT PLACEHOLDER
-                        </div>
+            <!-- Soul Chamber -->
+            <div class="project-card fade-in">
+                <div class="project-main">
+                    <h3>Soul Chamber</h3>
+                    <p class="desc">
+                        Roblox.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">SDL / SFML</span>
+                        <span class="tag">2D</span>
                     </div>
+                </div>
 
-                    <button class="expand-btn" onclick="toggleExpand(this)">
-                        <span class="arrow">▶</span> View More
-                    </button>
+                <div class="project-screenshot">
+                    <img src="" alt="">
+                    <div class="ph-label">
+                        <span>🖼</span>
+                        SCREENSHOT PLACEHOLDER
+                    </div>
+                </div>
 
-                    <div class="project-expanded">
-                        <div class="project-expanded-inner">
-                            <p>
-                                Extended description for your 2D game. What was the scope?
-                                What systems did you build? What would you do differently?
-                                These details are what interviewers actually want to read.
-                            </p>
-                            <div class="video-wrap">
-                                <div class="ph-label">
-                                    <span>▶</span>
-                                    GAMEPLAY VIDEO PLACEHOLDER
-                                </div>
+                <button class="expand-btn" onclick="toggleExpand(this)">
+                    <span class="arrow">▶</span> View More
+                </button>
+
+                <div class="project-expanded">
+                    <div class="project-expanded-inner">
+                        <p>
+                            Extended description for your 2D game. What was the scope?
+                            What systems did you build? What would you do differently?
+                            These details are what interviewers actually want to read.
+                        </p>
+                        <div class="video-wrap">
+                            <div class="ph-label">
+                                <span>▶</span>
+                                GAMEPLAY VIDEO PLACEHOLDER
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--Add more when you can-->
-
             </div>
-        </section>
 
-        <!-- CV -->
-        <section id="cv">
-            <div class="section-label">section_03</div>
-            <h2>CV</h2>
-            <div class="cv-block">
-                <p>
-                    Full CV available as a PDF. Covers my education at Northumbria
-                    University, project work, technical skills, and any industry
-                    experience.
-                </p>
-                <!-- Replace href with your actual CV file path -->
-                <a class="cv-btn" href="cv.pdf" download>
-                    ↓ Download CV
-                </a>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <div class="section-label">section_04</div>
-            <h2>Contact</h2>
-            <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:1rem;">
-                Open to opportunities — feel free to reach out.
-            </p>
-            <div class="contact-links">
-                <a href="mailto:sheaturner21@gmail.com">sheaturner21@gmail.com</a>
-                <a href="https://github.com/Scar-Diama" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/shea-turner-542a722b1/" target="_blank">LinkedIn</a>
-            </div>
-        </section>
-
-        <footer>
-            &copy; 2026 Shea Turner
-        </footer>
+            <!--Add more when you can-->
 
     </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+        <div class="section-label">section_03</div>
+        <h2>CV</h2>
+        <div class="cv-block">
+            <p>
+                Full CV available as a PDF. Covers my education at Northumbria
+                University, project work, technical skills, and any industry
+                experience.
+            </p>
+            <!-- Replace href with your actual CV file path -->
+            <a class="cv-btn" href="cv.pdf" download>
+                ↓ Download CV
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-label">section_04</div>
+        <h2>Contact</h2>
+        <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:1rem;">
+            Open to opportunities — feel free to reach out.
+        </p>
+        <div class="contact-links">
+            <a href="mailto:sheaturner21@gmail.com">sheaturner21@gmail.com</a>
+            <a href="https://github.com/Scar-Diama" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/shea-turner-542a722b1/" target="_blank">LinkedIn</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Shea Turner
+    </footer>
 
     <script>
-    function toggleExpand(btn) {
-      const card = btn.closest('.project-card');
-      const expanded = card.querySelector('.project-expanded');
-      const isOpen = expanded.classList.contains('open');
+        function toggleExpand(btn) {
+            const card = btn.closest('.project-card');
+            const expanded = card.querySelector('.project-expanded');
+            const isOpen = expanded.classList.contains('open');
 
-      expanded.classList.toggle('open', !isOpen);
-      btn.classList.toggle('open', !isOpen);
-      btn.querySelector('span:last-child') && null;
-      btn.childNodes.forEach(n => {
-        if (n.nodeType === 3 && n.textContent.trim()) {
-          n.textContent = isOpen ? ' View More' : ' Show Less';
+            expanded.classList.toggle('open', !isOpen);
+            btn.classList.toggle('open', !isOpen);
+            btn.querySelector('span:last-child') && null;
+            btn.childNodes.forEach(n => {
+                if (n.nodeType === 3 && n.textContent.trim()) {
+                    n.textContent = isOpen ? ' View More' : ' Show Less';
+                }
+            });
         }
-      });
-    }
     </script>
 
 </BODY>
