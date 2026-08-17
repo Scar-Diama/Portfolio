@@ -598,14 +598,14 @@
                     <div class="project-expanded">
                         <div class="project-expanded-inner">
                             <p>
-                                Enemy behaviour scales with level. They start stationary, then introducing lateral movement, increasing velocity, new bullet patterns,
-                                and eventually fully free-roaming patterns with randomised speed and locations.
+                                Enemy behaviour scales with the level. They start stationary, then introducing lateral movement, increasing velocity, new bullet patterns,
+                                and eventually fully free-roaming with randomised speed and locations.
                                 <br />
                                 <br />
-                                Pointer usage was central to the targeting systems. Missiles track enemies by referencing object coordinates
+                                Pointer usage was central to the targeting systems enemy and player alike. Missiles track enemies by referencing object coordinates
                                 directly, keeping targeting responsive without unnecessary overhead. The biggest technical challenge was getting the
                                 missile system to fire cleanly under load without lag or sound spam/reapting rapidly,
-                                which required careful management of how events were queued and fired.
+                                which required careful management of pointer and event usage.
                                 <br />
                                 <br />
                                 Built against a deadline as a university assessment, demonstrating clean pointer usage,
@@ -649,7 +649,7 @@
                         <div class="project-expanded-inner">
                             <p>
                                 First Blood is a 3D horror mini game within a meta game that seamlessly integrates with the larger experience it needed to be implemented in.
-                                The player must collect data points scattered across a dimly lit map whilst avoiding a proximity-triggered AI monster within the time limit.
+                                The player must collect data points scattered across a dimly lit map whilst avoiding a proximity-triggered AI monster and navigating an interactable map within the time limit.
                                 <br />
                                 <br />
                                 The boss AI uses a proximity trigger. It is dormant until the player enters its range, then actively chases and deals damage.
@@ -675,7 +675,7 @@
                         <h3>Soul Chamber</h3>
                         <p class="desc">
                             A Roblox horror survival prototype built in Luau. Players evade roaming monsters across a custom built map,
-                            with sprint,flashlight and health mechanics, a points system, and a full menu screen.
+                            with sprint, flashlight and health mechanics, a points system, and a full menu screen.
                         </p>
                         <div class="tags">
                             <span class="tag">Roblox Engine</span>
@@ -696,18 +696,22 @@
                     <div class="project-expanded">
                         <div class="project-expanded-inner">
                             <p>
-                                Built as a solo prototype with basic multiplayer, this project was a test of my ability to create a horror survival experience within Roblox Studio.
+                                Built as a solo prototype with basic multiplayer, this project was a test of my ability to create a horror survival experience within Roblox Studio and its Luau language.
                                 <br />
                                 <br />
                                 I analysed existing Roblox horror games to understand what made them effective, then built a custom map with a focus on lighting, sound design, and player movement with
-                                respected mechanics and such e.g. sprinting and its trade offs. For example a player may sprint to escape a monster, but their flashlight will sway, making it harder to see.
-
-                                I took an existing AI implementation, analysed how it worked, modified its behaviour and integrated it into my own gameplay systems to create
-                                the monsters that chase the player. to fit the game's pacing and horror tone whilst tuning chase logic and responsiveness.
+                                respected mechanics e.g. sprinting and its trade offs. For example a player may sprint to escape a monster, but their flashlight will sway, making it harder to see.
                                 Animation work was also explored and altered to further enhance the player and monster's design and movements.
                                 <br />
                                 <br />
-                                A full menu screen was also added with a points system to create a sense of progression.
+                                I took an existing AI implementation, analysed how it worked, modified its behaviour and integrated it into my own gameplay systems to create
+                                the monsters that chase the player to fit the game's pacing and horror tone whilst tuning chase logic and responsiveness.
+                                Animation work was also explored and altered to further enhance the player and monster's design and movements.
+                                <br />
+                                <br />
+                                A full menu screen was also added with a points system to create a sense of progression that rewarded players for long survival times, this tested my 
+                                ability to manage player data. Multiplayer was intended, however
+                                due to Roblox's ID requriements I could not go further
                             </p>
                             <div class="video-wrap">
                                 <video src="movies/SCM.mp4" controls></video>
