@@ -403,6 +403,86 @@
             padding: 0.15em 0.6em;
         }
 
+        /* ── MINI PROJECT GRID (Additional Projects) ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.55rem;
+        }
+
+        .mini-card {
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            overflow: hidden;
+            transition: border-color 0.25s, transform 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .mini-card:hover {
+                border-color: var(--green-dim);
+                transform: translateY(-2px);
+            }
+
+        .mini-thumb {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #0a120a;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .mini-thumb::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+                background-size: 24px 24px;
+            }
+
+            .mini-thumb img {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .mini-info {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .mini-info h4 {
+                font-family: 'VT323', monospace;
+                font-size: 1.6rem;
+                color: var(--green);
+                letter-spacing: 0.03em;
+                margin-bottom: 0.35rem;
+            }
+
+            .mini-info p {
+                color: var(--text);
+                font-size: 0.85rem;
+                line-height: 1.55;
+                margin-bottom: 0.85rem;
+                flex: 1;
+            }
+
+        .mini-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+            .mini-tags .tag {
+                font-size: 9.5px;
+                padding: 0.1em 0.5em;
+            }
+
         /* ── CV ── */
         .cv-block {
             border: 1px solid var(--border);
@@ -521,7 +601,7 @@
             <h2><u>Games Programmer &amp; <span>Software Developer</span></u></h2>
             <p class="tagline">
                 A current undergraduate from
-                <span>Northumbria University</span> with Unreal Engine, C++, gameplay systems and modding
+                <span>Northumbria University</span> with Unreal Engine, C++, gameplay and software system
                 experience with a diverse background in software engineering, project management, game creation and software development.
                 <br />
                 <br />
@@ -578,10 +658,10 @@
                             power-ups, unique bullet patterns, and an event-driven architecture handling collision, targeting, and game state.
                         </p>
                         <div class="tags">
-                            <span class="tag">Hornet</span>
+                            <span class="tag">Hornet Engine</span>
                             <span class="tag">C++</span>
                             <span class="tag">2D</span>
-                            <span class="tag">Prototype/Demo</span>
+                            <span class="tag">Prototype</span>
                             <span class="tag">Project</span>
                         </div>
                     </div>
@@ -619,6 +699,58 @@
                     </div>
                 </div>
 
+                <!-- Project Survive -->
+                <div class="project-card fade-in">
+                    <div class="project-main">
+                        <h3>Project Survive</h3>
+                        <p class="desc">
+                            A fast paced first person roguelike shooter made in Unreal Engine 5. Players must survive waves of enemies whilst collecting power ups and upgrades to reach the final boss.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Game Development</span>
+                            <span class="tag">Unreal Engine</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">3D</span>
+                            <span class="tag">Prototype</span>
+                        </div>
+                    </div>
+
+                    <div class="project-screenshot">
+                        <img src="" alt="">
+                    </div>
+
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▶</span> View More
+                    </button>
+
+                    <div class="project-expanded">
+                        <div class="project-expanded-inner">
+                            <p>
+                                This project challenged and strengthened my techincal and problem solving skills by adding a multidue of features to a first person roguelike shooter prototype.
+                                <br />
+
+                                In this prototype, I created:
+                                <ul>
+                                    <li>Player Health System and Movement</li>
+                                    <li>Dash System</li>
+                                    <li>Camera Head Bobbing and strafing</li>
+                                    <li>Level Design</li>
+                                    <li>Enemy Wave System</li>
+                                    <li>Enemies with AI, Health and Stats</li>
+                                    <li>Power Ups / Upgrade System</li>
+                                    <li>Unique Weapons with Unique Abilities (E.g. Damage over time effects)</li>
+                                </ul>
+                                <br />
+                                <br />
+
+                            </p>
+                            <div class="video-wrap">
+                                <video src="movies/SCM.mp4" controls></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- FirstBlood -->
                 <div class="project-card fade-in">
                     <div class="project-main">
@@ -629,10 +761,11 @@
                             Collect data points against the clock while avoiding a proximity-triggered monster.
                         </p>
                         <div class="tags">
-                            <span class="tag">Unreal</span>
+                            <span class="tag">Game Development</span>
+                            <span class="tag">Unreal Engine</span>
                             <span class="tag">C++</span>
                             <span class="tag">3D</span>
-                            <span class="tag">Prototype/Demo</span>
+                            <span class="tag">Prototype</span>
                             <span class="tag">Project</span>
                         </div>
                     </div>
@@ -678,6 +811,7 @@
                             with sprint, flashlight and health mechanics, a points system, and a full menu screen.
                         </p>
                         <div class="tags">
+                            <span class="tag">Game Development</span>
                             <span class="tag">Roblox Engine</span>
                             <span class="tag">Luau</span>
                             <span class="tag">3D</span>
@@ -719,46 +853,67 @@
                     </div>
                 </div>
 
-                <!-- Assembly Calc -->
-                <div class="project-card fade-in">
-                    <div class="project-main">
-                        <h3>Assembly Calculator</h3>
-                        <p class="desc">
-                            A low-level assembly calculator that had basic addition, subtraction abilities with error handling and a quit function.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Roblox Engine</span>
-                            <span class="tag">Luau</span>
-                            <span class="tag">3D</span>
-                            <span class="tag">Demo</span>
-                        </div>
+                <!--Add more when you can-->
+
+            </div>
+        </section>
+
+        <!-- SIDE PROJECTS -->
+        <section id="projects">
+            <div class="section-label">section_02.5</div>
+            <h2>Additional Projects</h2>
+            <p>Other projects I have completed.</p>
+            <div class="projects-grid">
+
+                <!-- MINI PROJECT: duplicate this block for each extra project -->
+                <div class="mini-card fade-in">
+                    <div class="mini-thumb">
+                        <img src="screenshots/ACSS.png" alt="Assembly Calculator Screenshot showing functionality.">
                     </div>
-
-                    <div class="project-screenshot">
-                        <img src="" alt="">
-                    </div>
-
-                    <button class="expand-btn" onclick="toggleExpand(this)">
-                        <span class="arrow">▶</span> View More
-                    </button>
-
-                    <div class="project-expanded">
-                        <div class="project-expanded-inner">
-                            <p>
-                               As part of a University project, I was tasked with making a low-level calculator in assembly code utilising a inhouse software called WASP and Sting to maniplulate
-                               a two gate CPU. Two gates were only accessible to ensure I had to utilise memory management correctly in order to perform calculations and operations.
-                                <br />
-                                <br />
-                                This tested my ability to work at the lower level of programming and plan out how I'd tackle certian issues such as rounding up when getting to two and three digits.
-                            </p>
-                            <div class="video-wrap">
-                                <video src="movies/SCM.mp4" controls></video>
-                            </div>
+                    <div class="mini-info">
+                        <h4>Assembly Calculator</h4>
+                        <p> A low-level assembly calculator that had basic addition, subtraction abilities with error handling and a quit function.</p>
+                        <div class="mini-tags">
+                            <span class="tag">Assembly Code</span>
+                            <span class="tag">Low-Level</span>
+                            <span class="tag">Memory Management</span>
+                            <span class="tag">CPU Architecture</span>
                         </div>
                     </div>
                 </div>
 
-                <!--Add more when you can-->
+                <div class="mini-card fade-in">
+                    <div class="mini-thumb">
+                        <img src="screenshots/DBSS.png" alt="Project screenshot">
+                    </div>
+                    <div class="mini-info">
+                        <h4>Discord Bot</h4>
+                        <p>A Discord bot that would function as a personal timetable keeper with extra features. (Due to circumstances, the bot was taken down after the academic year, so a live demo isn't available.) </p>
+                        <div class="mini-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Bot Development</span>
+                            <span class="tag">Command Handling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mini-card fade-in">
+                    <div class="mini-thumb">
+                        <img src="screenshots/mini-placeholder-3.png" alt="Project screenshot">
+                    </div>
+                    <div class="mini-info">
+                        <h4>File Reader</h4>
+                        <p>A config-driven level loader for the Hornet engine. It parses a CSV file and dynamically spawns the player, enemies, pickups, and background based on that data, so designers can edit levels without touching the C++ code.</p>
+                        <div class="mini-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">File Read and Parse</span>
+                            <span class="tag">Game Engine Programming</span>
+                            <span class="tag">Memory Management</span>
+                            <span class="tag">Custom Engine (Hornet)</span>
+                            <span class="tag">Tooling / Pipeline Development</span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
