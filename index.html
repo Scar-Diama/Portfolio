@@ -490,6 +490,21 @@
             padding: 2rem;
         }
 
+        .cv-viewer {
+            width: 100%;
+            aspect-ratio: 8.5 / 11;
+            max-height: 900px;
+            border: 1px solid var(--border);
+            background: #0a120a;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+            .cv-viewer object {
+                width: 100%;
+                height: 100%;
+            }
+
             .cv-block p {
                 color: var(--text);
                 font-size: 0.9rem;
@@ -934,13 +949,22 @@
             <h2>CV</h2>
             <div class="cv-block">
                 <p>
-                    Full CV available as a PDF. Covers my education at Northumbria
+                    Full CV below. Covers my education at Northumbria
                     University, project work, technical skills, and any industry
                     experience.
                 </p>
-                <!-- Replace href with your actual CV file path -->
-                <a class="cv-btn" href="cv.pdf" download>
-                    ↓ Download CV
+
+                <div class="cv-viewer">
+                    <object data="cv.pdf" type="application/pdf">
+                        <p style="color:var(--text-dim); font-size:0.85rem; padding:1.5rem;">
+                            Your browser can't display the PDF inline.
+                            <a href="cv.pdf" target="_blank" style="color:var(--green);">Open it in a new tab instead.</a>
+                        </p>
+                    </object>
+                </div>
+
+                <a class="cv-btn" href="cv.pdf" target="_blank">
+                    ↗ Open Full Size
                 </a>
             </div>
         </section>
