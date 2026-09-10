@@ -179,50 +179,58 @@
         }
 
         /* ── PHOTO GALLERY (reuses .project-screenshot look) ── */
+        /* ── PHOTO GALLERY (grid, smaller thumbnails) ── */
         .gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
             max-width: 700px;
             margin: 0 auto;
         }
 
-        .gallery figure {
-            margin: 0;
-        }
-
-        .gallery .shot {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #0a120a;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-            .gallery .shot::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-                background-size: 40px 40px;
+            .gallery figure {
+                margin: 0;
             }
 
-            .gallery .shot img {
-                position: absolute;
-                inset: 0;
+            .gallery .shot {
+                display: block;
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                aspect-ratio: 4/3;
+                background: #0a120a;
+                border: 1px solid var(--border);
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                transition: border-color 0.2s;
             }
 
-        .gallery figcaption {
-            color: var(--text-dim);
-            font-size: 0.8rem;
-            letter-spacing: 0.04em;
-            margin-top: 0.5rem;
-            text-align: center;
-        }
+                .gallery .shot:hover {
+                    border-color: var(--green-dim);
+                }
+
+                .gallery .shot::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+                    background-size: 24px 24px;
+                }
+
+                .gallery .shot img {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            .gallery figcaption {
+                color: var(--text-dim);
+                font-size: 0.75rem;
+                letter-spacing: 0.04em;
+                margin-top: 0.4rem;
+                text-align: center;
+            }
 
         /* ── VIDEO (identical to site's .video-wrap) ── */
         .video-wrap {
@@ -353,7 +361,7 @@
                 </p>
                 <p>
                     Once the meetings had concluded, I created a project plan and timeline to ensure that the project would be completed ahead of schedule whilst also planning contingencies for any potential issues.
-                    This spreadsheet allowed me to delegate tasks to the team and track overall progress of the project. 
+                    This spreadsheet allowed me to delegate tasks to the team and track overall progress of the project.
                 </p>
                 <p>
                     Additionally it also allowed team members to raise any issues they had
@@ -367,6 +375,9 @@
                 <p>
                     As for me, I delegated the harder tasks to myself. This includes: immersive videos, general character design, general programming, police report files, and final delivery to the client.
                 </p>
+                <p>
+                    <strong>Although I did oversee and manage the project, it should be known that this was a team effort and does not solely reflect my work.</strong>
+                </p>
             </div>
 
             <h2>Final Product</h2>
@@ -376,12 +387,12 @@
                 </p>
                 <br />
                 <ul>
-                    <li>Immersive Videos</li>
-                    <li>Ten Created Characters and Case Files</li>
-                    <li>Clues and Evidence</li>
-                    <li>Interactive Puzzles</li>
-                    <li>Custom Program</li>
-                    <li>Ending VideoCutscene</li>
+                    <li>Immersive Videos - Used to set the scene and provide context for the player.</li>
+                    <li>Ten Created Characters and Case Files - Each character has a unique backstory and the case files that make them suspects.</li>
+                    <li>Clues and Evidence - Used to provide players with information to solve the mystery.</li>
+                    <li>Interactive Puzzles - Core gameplay loop for the escape room used to challenge player's problem solving skills.</li>
+                    <li>Custom Terminal Program (C++) - The main interface for interacting with the puzzle system in phase two.</li>
+                    <li>Immersive Ending Video - Provides a satisfying conclusion to the player's experience.</li>
                 </ul>
                 <br />
                 <p>
@@ -393,50 +404,43 @@
 
         <!-- GALLERY -->
         <section>
-            <div class="section-label">gallery</div>
-            <h2>Photos</h2>
-            <p>
-                Below are some snippets of the final product, these are items I personally created or heavily contributed to.
-            </p>
-            <br />
-            <div class="gallery">
-                <figure>
-                    <div class="shot">
-                        <img src="screenshots/un-tyneley-demise-1.png" alt="Un-tyne-ly Demise photo 1">
-                    </div>
-                    <figcaption>Caption goes here</figcaption>
-                </figure>
-                <figure>
-                    <div class="shot">
-                        <img src="screenshots/un-tyneley-demise-2.png" alt="Un-tyne-ly Demise photo 2">
-                    </div>
-                    <figcaption>Caption goes here</figcaption>
-                </figure>
-                <figure>
-                    <div class="shot">
-                        <img src="screenshots/un-tyneley-demise-3.png" alt="Un-tyne-ly Demise photo 3">
-                    </div>
-                    <figcaption>Caption goes here</figcaption>
-                </figure>
-            </div>
-        </section>
+            <section>
+                <div class="section-label">gallery</div>
+                <h2>Code Snippets and Screenshots</h2>
+                <p style="color:var(--text-dim); font-size:0.9rem; max-width:640px; margin: 0 auto 1.5rem;">
+                    Below are some snippets of the final product. These are items I personally created or heavily contributed to. Click the image to see the full size image.
+                </p>
 
-        <!-- VIDEO -->
-        <section>
-            <div class="section-label">walkthrough</div>
-            <h2>Video</h2>
-            <div class="video-wrap">
-                <video src="movies/un-tyneley-demise.mp4" controls></video>
-            </div>
-        </section>
+                <div class="gallery">
+                    <figure>
+                        <div class="shot">
+                            <a href="screenshots/PMCS1.png" target="_blank" rel="noopener noreferrer" class="shot">
+                                <img src="screenshots/PMCS1.png" alt="Un-tyne-ly Demise photo 1">
+                            </a>
+                        </div>
+                        <figcaption>Terminal Code Snippet One - main()</figcaption>
+                    </figure>
 
-        <!-- LINK -->
-        <section style="border-bottom:none;">
-            <div class="center">
-                <a class="link-btn" href="https://www.justintyne-escape.co.uk/" target="_blank" rel="noopener noreferrer">
-                    ↗ Visit Just In Tyne Escape
-                </a>
-            </div>
+                    <figure>
+                        <div class="shot">
+                            <a href="screenshots/PMCS2.png" target="_blank" rel="noopener noreferrer" class="shot">
+                                <img src="screenshots/PMCS2.png" alt="Un-tyne-ly Demise photo 2">
+                            </a>
+                        </div>
+                        <figcaption>Terminal Code Snippet Two - passwordInput()</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="shot">
+                            <a href="screenshots/PMCS3.png" target="_blank" rel="noopener noreferrer" class="shot">
+                                <img src="screenshots/PMCS3.png" alt="Un-tyne-ly Demise photo 3">
+                            </a>
+                        </div>
+                        <figcaption>Terminal Code Snippet Three - Program in use.</figcaption>
+                    </figure>
+
+                </div>
+            </section>
         </section>
 
         <footer>
